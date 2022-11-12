@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script
+            src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            />
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
+            />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../css/class.css">
+    </head>
+    <body>
+        <!-- component -->
+        <div class="md:flex flex-col md:flex-row md:min-h-screen">
+            <div
+                @click.away="open= false"
+                class="flex flex-col w-full md:w-64 text-gray-700 bg-white
+                dark-mode:text-gray-200 dark-mode:bg-gray-800 flex-shrink-0
+                min-[767px]:border min-[768px]:border-r-gray"
+                x-data="{ open: false }">
+                <div
+                    class="flex-shrink-0 px-8 py-4 flex flex-row items-center
+                    justify-between">
+                    <img
+                        src="../src/logos-images/logo.png"
+                        class="h-[80px] block m-auto"
+                        alt=""
+                        />
+                    <button
+                        class="md:hidden rounded-lg focus:outline-none
+                        focus:shadow-outline"
+                        @click="open= !open">
+                        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6
+                            h-6">
+                            <path
+                                x-show="!open"
+                                fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0
+                                01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0
+                                01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0
+                                01-1-1z"
+                                clip-rule="evenodd"></path>
+                            <path
+                                x-show="open"
+                                fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10
+                                8.586l4.293-4.293a1 1 0 111.414 1.414L11.414
+                                10l4.293 4.293a1 1 0 01-1.414 1.414L10
+                                11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586
+                                10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <nav
+                    :class="{'block': open, 'hidden': !open}"
+                    class="flex-grow md:block px-4 pb-4 md:pb-0
+                    md:overflow-y-auto">
+                    <a
+                        class="block px-4 py-2 mt-2 text-sm font-semibold
+                        text-gray-90 rounded-lg bg-transparent
+                        dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600
+                        dark-mode:focus:bg-gray-600 dark-mode:focus:text-white
+                        dark-mode:hover:text-white dark-mode:text-gray-200
+                        hover:text-gray-900 focus:text-gray-900
+                        hover:bg-gray-200 focus:outline-none
+                        focus:shadow-outline"
+                        href="index.html">Mark Attendance</a>
+                    <a
+                        class="block px-4 py-2 mt-2 text-sm font-semibold
+                        text-gray-900 rounded-lg
+                        dark-mode:bg-transparent dark-mode:hover:bg-gray-600
+                        dark-mode:focus:bg-gray-600 dark-mode:focus:text-white
+                        dark-mode:hover:text-white dark-mode:text-gray-200
+                        hover:text-gray-900 focus:text-gray-900
+                        hover:bg-gray-200 focus:outline-none
+                        focus:shadow-outline"
+                        href="addclass.html">Add Class</a>
+
+                    <a
+                    <a
+                        class="block px-4 py-2 mt-2 text-sm font-semibold
+                        text-gray-900 rounded-lg
+                        dark-mode:bg-transparent dark-mode:hover:bg-gray-600
+                        dark-mode:focus:bg-gray-600 dark-mode:focus:text-white
+                        dark-mode:hover:text-white dark-mode:text-gray-200
+                        hover:text-gray-900 focus:text-gray-900
+                        hover:bg-gray-200 bg-gray-200 focus:outline-none
+                        focus:shadow-outline"
+                        href="addclass.html">All Students</a>
+
+                    <a
+                        class="block px-4 py-2 mt-2 text-sm font-semibold
+                        text-gray-900 bg-transparent rounded-lg
+                        dark-mode:bg-transparent dark-mode:hover:bg-gray-600
+                        dark-mode:focus:bg-gray-600 dark-mode:focus:text-white
+                        dark-mode:hover:text-white dark-mode:text-gray-200
+                        hover:text-gray-900 focus:text-gray-900
+                        hover:bg-gray-200 focus:outline-none
+                        focus:shadow-outline"
+                        href="#">Add Student</a>
+                    <a
+                        class="block px-4 py-2 mt-2 text-sm font-semibold
+                        text-gray-900 bg-transparent rounded-lg
+                        dark-mode:bg-transparent dark-mode:hover:bg-gray-600
+                        dark-mode:focus:bg-gray-600 dark-mode:focus:text-white
+                        dark-mode:hover:text-white dark-mode:text-gray-200
+                        hover:text-gray-900 focus:text-gray-900
+                        hover:bg-gray-200 focus:outline-none
+                        focus:shadow-outline"
+                        href="#">Contact</a>
+                    <div
+                        @click.away="open= false"
+                        class="relative"
+                        x-data="{ open: false }">
+                        <button
+                            @click="open= !open"
+                            class="flex flex-row items-center w-full px-4 py-2
+                            mt-2 text-sm font-semibold text-left bg-transparent
+                            rounded-lg dark-mode:bg-transparent
+                            dark-mode:focus:text-white
+                            dark-mode:hover:text-white
+                            dark-mode:focus:bg-gray-600
+                            dark-mode:hover:bg-gray-600 md:block
+                            hover:text-gray-900 focus:text-gray-900
+                            hover:bg-gray-200 focus:outline-none
+                            focus:shadow-outline">
+                            <span>Dropdown</span>
+                            <svg
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                :class="{'rotate-180': open, 'rotate-0': !open}"
+                                class="inline w-4 h-4 mt-1 ml-1
+                                transition-transform duration-200 transform
+                                md:-mt-1">
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10
+                                    10.586l3.293-3.293a1 1 0 111.414 1.414l-4
+                                    4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+
+                    </div>
+                </nav>
+            </div>
+            <!-- Right Div Starts Now  -->
+            <div class="bg---[#587e97] w-full">
+
+                <!-- component -->
+<!-- This is an example component -->
+<div class="w-full mx-auto">
+
+	<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+		<div class="p-4 w-[400px] m-auto">
+			<label for="table-search" class="sr-only">Search</label>
+			<div class="relative mt-1">
+				<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+					<svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+						xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd"
+							d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+							clip-rule="evenodd"></path>
+					</svg>
+				</div> 
+				<input type="text" id="table-search" class="bg-gray-50 border maut  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for items">
+        </div>
+			</div>
+			<table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+				<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+					<tr>
+						
+						<th scope="col" class="px-6 py-3">
+							Student name
+						</th>
+						<th scope="col" class="px-6 py-3">
+							Teacher Name
+						</th>
+						<th scope="col" class="px-6 py-3">
+							course
+						</th>
+						<th scope="col" class="px-6 py-3">
+							Timing
+						</th>
+						<th scope="col" class="px-6 py-3">
+							<span class="sr-only">Edit</span>
+						</th>
+					</tr>
+				</thead>
+				<tbody id="st-tbody">
+					<!-- <tr
+						class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+		
+						<th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+							Apple MacBook Pro 17"
+						</th>
+						<td class="px-6 py-4">
+							Sliver
+						</td>
+						<td class="px-6 py-4">
+							Laptop
+						</td>
+						<td class="px-6 py-4">
+							$2999
+						</td>
+						<td class="px-6 py-4 text-right">
+							<a class="font-medium text-blue-600 dark:text-blue-500 hover:underline" onclick="edit()">Edit</a>
+						</td>
+					</tr>
+					<tr
+						class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+				
+						<th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+							Microsoft Surface Pro
+						</th>
+						<td class="px-6 py-4">
+							White
+						</td>
+						<td class="px-6 py-4">
+							Laptop PC
+						</td>
+						<td class="px-6 py-4">
+							$1999
+						</td>
+						<td class="px-6 py-4 text-right">
+							<a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+						</td>
+					</tr>
+					<tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
+				
+						<th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+							Magic Mouse 2
+						</th>
+						<td class="px-6 py-4">
+							Black
+						</td>
+						<td class="px-6 py-4">
+							Accessories
+						</td>
+						<td class="px-6 py-4">
+							$99
+						</td>
+						<td class="px-6 py-4 text-right">
+							<a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+						</td>
+					</tr> -->
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+    <!-- component -->
+<!-- Code block starts -->
+<dh-component class="new-modal">
+            
+    <div class="py-12 bg-gray-700 transition duration-150 ease-in-out z-10 absolute top-0 right-0 bottom-0 left-0" id="modal">
+        <div role="alert" class="container mx-auto w-11/12 md:w-2/3 max-w-lg">
+            <div class="relative py-8 px-5 md:px-10 bg-white shadow-md rounded border border-gray-400">
+                <div class="w-full flex justify-start text-gray-600 mb-3">
+                    <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-wallet" width="52" height="52" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12" />
+                        <path d="M20 12v4h-4a2 2 0 0 1 0 -4h4" />
+                    </svg>
+                </div>
+                <h1 class="text-gray-800 font-lg font-bold tracking-normal leading-tight mb-4">Enter Billing Details</h1>
+                <label for="name" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Owner Name</label>
+                <input id="name" class="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="James" />
+                <label for="email2" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Card Number</label>
+                <div class="relative mb-5 mt-2">
+                    <div class="absolute text-gray-600 flex items-center px-4 border-r h-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-credit-card" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <rect x="3" y="5" width="18" height="14" rx="3" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
+                            <line x1="7" y1="15" x2="7.01" y2="15" />
+                            <line x1="11" y1="15" x2="13" y2="15" />
+                        </svg>
+                    </div>
+                    <input id="email2" class="text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-16 text-sm border-gray-300 rounded border" placeholder="XXXX - XXXX - XXXX - XXXX" />
+                </div>
+                <label for="expiry" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Expiry Date</label>
+                <div class="relative mb-5 mt-2">
+                    <div class="absolute right-0 text-gray-600 flex items-center pr-3 h-full cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-event" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <rect x="4" y="5" width="16" height="16" rx="2" />
+                            <line x1="16" y1="3" x2="16" y2="7" />
+                            <line x1="8" y1="3" x2="8" y2="7" />
+                            <line x1="4" y1="11" x2="20" y2="11" />
+                            <rect x="8" y="15" width="2" height="2" />
+                        </svg>
+                    </div>
+                    <input id="expiry" class="text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="MM/YY" />
+                </div>
+                <label for="cvc" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">CVC</label>
+                <div class="relative mb-5 mt-2">
+                    <div class="absolute right-0 text-gray-600 flex items-center pr-3 h-full cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-info-circle" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z"></path>
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                            <polyline points="11 12 12 12 12 16 13 16"></polyline>
+                        </svg>
+                    </div>
+                    <input id="cvc" class="mb-8 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="MM/YY" />
+                </div>
+                <div class="flex items-center justify-start w-full">
+                    <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm">Submit</button>
+                    <button class="focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-400 ml-3 bg-gray-100 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400 hover:bg-gray-300 border rounded px-8 py-2 text-sm" onclick="modalHandler()">Cancel</button>
+                </div>
+                <button class="cursor-pointer absolute top-0 right-0 mt-4 mr-5 text-gray-400 hover:text-gray-600 transition duration-150 ease-in-out rounded focus:ring-2 focus:outline-none focus:ring-gray-600" onclick="modalHandler()" aria-label="close modal" role="button">
+                    <svg  xmlns="http://www.w3.org/2000/svg"  class="icon icon-tabler icon-tabler-x" width="20" height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="w-full flex justify-center py-12" id="button">
+        <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 mx-auto transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-4 sm:px-8 py-2 text-xs sm:text-sm" onclick="modalHandler(true)">Open Modal</button>
+    </div> -->
+
+    
+</dh-component>
+<!-- Code block ends -->
+            </div>
+        </body>
+        <script
+            src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.6.x/dist/component.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js"
+            defer></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+        <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+        <script src="../Js/app.js" type="module"></script>
+        <script src="../Js/allclass.js"></script>
+    </html>

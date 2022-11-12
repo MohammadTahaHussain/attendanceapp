@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link
+      rel="stylesheet"
+      href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css"
+    />
+    <!-- component -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="bg-gray-200">
+      <section class="h-full gradient-form">
+        <div class="container py-12 px-6 h-full max-[1024px]:block max-[1024px]:m-auto">
+          <div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
+            <div class="xl:w-10/12">
+              <div class="block bg-white shadow-lg rounded-lg">
+                <div class="lg:flex lg:flex-wrap g-0">
+                  <div class="lg:w-6/12 px-4 md:px-0">
+                    <div class="md:p-12 md:mx-6">
+                      <div class="text-center">
+                        <img
+                          class="mx-auto w-48"
+                          src="src/logos-images/logo.png"
+                          alt="logo"
+                        />
+                      </div>
+                      <form class="relative -top-4">
+                        <p class="mb-4 font-semibold font-sans max-[600px]:text-center">Please login to your account</p>
+                        <div class="mb-4">
+                          <input
+                            type="text"
+                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:outline-none focus:border-gray-300 focus:ring-0"
+                            id="input-email-login"
+                            placeholder="Username"
+                          />
+                        </div>
+                        <div class="mb-4">
+                    
+                          <input
+                            type="password"
+                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:outline-none focus:border-gray-300 focus:ring-0" 
+                            id="input-password-login"
+                            placeholder="Password"
+                          />
+                        </div>
+                        <div class="text-center pt-1 mb-12 pb-1">
+                          <button
+                            class="inline-block px-6 py-2.5 text-gray-300 font-medium text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full mb-3 bg-[#0873b9]"
+                            type="button"
+                            id="login-btn"
+                            data-mdb-ripple="true"
+                            data-mdb-ripple-color="light"
+                          >
+                            Log in
+                          </button>
+                          <a class="text-gray-500" href="./recover-&-verify/recovery.html">Forgot password?</a>
+                        </div>
+
+                      </form>
+                    </div>
+                  </div>
+                  <div
+                    class="lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none bg-gradient-to-r to-[#8bc048] from-[#0873b9]"
+                  >
+                    <div class="text-white px-4 py-6 md:p-12 md:mx-6">
+                      <h4 class="text-xl font-semibold mb-6">We are more than just a company</h4>
+                      <p class="text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  </body>
+  <!-- <script
+    src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+    defer
+  ></script> -->
+  <script type="module" src="Js/app.js"></script>
+</html>
